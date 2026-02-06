@@ -20,9 +20,9 @@ int main()
     auto remove = std::remove_if(numbers.begin(), numbers.end(), [](int n) { return n < 0; });
     numbers.erase(remove, numbers.end());
     cout << "Final Array: ";
-    for (int i = 0; i < numbers.size(); i++)
+    for (int number : numbers)
     {
-        cout << numbers[i] << " ";
+        cout << number << " ";
     }
     cout << endl;
 
