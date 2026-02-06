@@ -19,9 +19,9 @@ int main()
     auto remove = remove_if(numbers.begin(), numbers.end(), [](int n) { return (n % 2) != 0; });
     numbers.erase(remove, numbers.end());
     cout << "Even numbers: ";
-    for (int i = 0; i < numbers.size(); i++)
+    for (int number : numbers)
     {
-        cout << numbers[i] << " ";
+        cout << number << " ";
     }
     cout << endl;
     return 0;
