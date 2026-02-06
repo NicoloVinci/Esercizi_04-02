@@ -7,14 +7,14 @@ using namespace std;
 int main()
 {
     vector numbers = {-5, -10, 20, 25, -30, 40, 0, -1, 60, 7};
-    auto positive = find_if(numbers.begin(), numbers.end(), [](int x) { return x > 0; });
+    auto positive = find_if(numbers.begin(), numbers.end(), [](int x) { return x >= 0; });
     if (positive != numbers.end())
     {
-        cout << "First positive number: " << *positive << endl;
+        cout << "First non-negative number: " << *positive << endl;
     }
     else
     {
-        cout << "No positive numbers found." << endl;
+        cout << "No non-negative numbers found." << endl;
     }
     auto value = find_if(numbers.begin(), numbers.end(), [](int x) { return x > 30; });
     if (value != numbers.end())
@@ -27,11 +27,11 @@ int main()
     }
     auto remove = remove_if(numbers.begin(), numbers.end(), [](int x) { return x < 0; });
     numbers.erase(remove, numbers.end());
-    std::sort(numbers.begin(), numbers.end());
+    sort(numbers.begin(), numbers.end());
     cout << "Final array: ";
-    for (int i = 0; i < numbers.size(); i++)
+    for (int number : numbers)
     {
-        cout << numbers[i] << " ";
+        cout << number << " ";
     }
     cout << endl;
     return 0;
